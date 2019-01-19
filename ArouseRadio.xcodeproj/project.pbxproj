@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F1F0B7021F39D5F00097F00 /* circle_red_button.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F1F0B6F21F39D5F00097F00 /* circle_red_button.json */; };
+		7F1F0B7321F3A9E800097F00 /* LiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F0B7221F3A9E800097F00 /* LiveLabel.swift */; };
+		7F1F0B7521F3ACFE00097F00 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F0B7421F3ACFE00097F00 /* NetworkService.swift */; };
+		7F1F0B8C21F3D0CD00097F00 /* play_to_pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F1F0B8B21F3D0CD00097F00 /* play_to_pause.json */; };
+		7F1F0B8E21F3D0F200097F00 /* pause_to_play.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F1F0B8D21F3D0F200097F00 /* pause_to_play.json */; };
+		7F53770721EED6A70054583A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53770621EED6A70054583A /* AppDelegate.swift */; };
+		7F53770921EED6A70054583A /* RadioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53770821EED6A70054583A /* RadioController.swift */; };
+		7F53770F21EED6A70054583A /* ArouseRadio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F53770D21EED6A70054583A /* ArouseRadio.xcdatamodeld */; };
+		7F53771121EED6A80054583A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F53771021EED6A80054583A /* Assets.xcassets */; };
+		7F53771421EED6A80054583A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F53771221EED6A80054583A /* LaunchScreen.storyboard */; };
+		7F53771F21EED6A80054583A /* ArouseRadioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53771E21EED6A80054583A /* ArouseRadioTests.swift */; };
+		7F53772A21EED6A80054583A /* ArouseRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53772921EED6A80054583A /* ArouseRadioUITests.swift */; };
+		7F53773C21EED8080054583A /* RadioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53773B21EED8080054583A /* RadioViewModel.swift */; };
+		7F53773E21EED8330054583A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53773D21EED8330054583A /* AudioService.swift */; };
+		972CB8BEF4555083E38FA9E5 /* Pods_ArouseRadioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A13492CA3506E76CE43813 /* Pods_ArouseRadioTests.framework */; };
+		9DF3CBAD10E837195EC4CC16 /* Pods_ArouseRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6327CEEB751CDE8C2EE473D /* Pods_ArouseRadio.framework */; };
+		E62596FBF8198194966EF844 /* Pods_ArouseRadioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5A6557E1902CFD4B88B18F /* Pods_ArouseRadioUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F53771B21EED6A80054583A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F5376FB21EED6A70054583A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F53770221EED6A70054583A;
+			remoteInfo = ArouseRadio;
+		};
+		7F53772621EED6A80054583A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F5376FB21EED6A70054583A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F53770221EED6A70054583A;
+			remoteInfo = ArouseRadio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13A13492CA3506E76CE43813 /* Pods_ArouseRadioTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArouseRadioTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CA7D1DA587FDFA4F4FDA11 /* Pods-ArouseRadioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioUITests/Pods-ArouseRadioUITests.release.xcconfig"; sourceTree = "<group>"; };
+		71B1264E6CD5C3C1B706ACF7 /* Pods-ArouseRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioUITests/Pods-ArouseRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		72779CACEA358F0465296F7C /* Pods-ArouseRadioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioTests/Pods-ArouseRadioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F1F0B6F21F39D5F00097F00 /* circle_red_button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle_red_button.json; sourceTree = "<group>"; };
+		7F1F0B7221F3A9E800097F00 /* LiveLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLabel.swift; sourceTree = "<group>"; };
+		7F1F0B7421F3ACFE00097F00 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7F1F0B7621F3B12300097F00 /* ArouseRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArouseRadio.entitlements; sourceTree = "<group>"; };
+		7F1F0B8B21F3D0CD00097F00 /* play_to_pause.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = play_to_pause.json; path = ../../../../../../../../Downloads/play_to_pause.json; sourceTree = "<group>"; };
+		7F1F0B8D21F3D0F200097F00 /* pause_to_play.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pause_to_play.json; path = ../../../../../../../../Downloads/pause_to_play.json; sourceTree = "<group>"; };
+		7F53770321EED6A70054583A /* ArouseRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArouseRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F53770621EED6A70054583A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7F53770821EED6A70054583A /* RadioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RadioController.swift; path = "../New Group/RadioController.swift"; sourceTree = "<group>"; };
+		7F53770E21EED6A70054583A /* ArouseRadio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ArouseRadio.xcdatamodel; sourceTree = "<group>"; };
+		7F53771021EED6A80054583A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F53771321EED6A80054583A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F53771521EED6A80054583A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F53771A21EED6A80054583A /* ArouseRadioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArouseRadioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F53771E21EED6A80054583A /* ArouseRadioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArouseRadioTests.swift; sourceTree = "<group>"; };
+		7F53772021EED6A80054583A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F53772521EED6A80054583A /* ArouseRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArouseRadioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F53772921EED6A80054583A /* ArouseRadioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArouseRadioUITests.swift; sourceTree = "<group>"; };
+		7F53772B21EED6A80054583A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F53773B21EED8080054583A /* RadioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModel.swift; sourceTree = "<group>"; };
+		7F53773D21EED8330054583A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		81FFD40DAEDFE8DAEEFB150A /* Pods-ArouseRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio.release.xcconfig"; sourceTree = "<group>"; };
+		8A8B14920300620D5B0604CD /* Pods-ArouseRadioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioTests/Pods-ArouseRadioTests.release.xcconfig"; sourceTree = "<group>"; };
+		8CEB7F8556D263D044B6D60F /* Pods-ArouseRadio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio.debug.xcconfig"; sourceTree = "<group>"; };
+		C6327CEEB751CDE8C2EE473D /* Pods_ArouseRadio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArouseRadio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5A6557E1902CFD4B88B18F /* Pods_ArouseRadioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArouseRadioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F53770021EED6A70054583A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DF3CBAD10E837195EC4CC16 /* Pods_ArouseRadio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F53771721EED6A80054583A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				972CB8BEF4555083E38FA9E5 /* Pods_ArouseRadioTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F53772221EED6A80054583A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62596FBF8198194966EF844 /* Pods_ArouseRadioUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F1F0B7121F3A9CC00097F00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F1F0B7221F3A9E800097F00 /* LiveLabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F5376FA21EED6A70054583A = {
+			isa = PBXGroup;
+			children = (
+				7F53770521EED6A70054583A /* ArouseRadio */,
+				7F53771D21EED6A80054583A /* ArouseRadioTests */,
+				7F53772821EED6A80054583A /* ArouseRadioUITests */,
+				7F53770421EED6A70054583A /* Products */,
+				B35B1EA7B9C5304EBE5A080F /* Pods */,
+				BDA68058E8ADEB1D21A08EF7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7F53770421EED6A70054583A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F53770321EED6A70054583A /* ArouseRadio.app */,
+				7F53771A21EED6A80054583A /* ArouseRadioTests.xctest */,
+				7F53772521EED6A80054583A /* ArouseRadioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F53770521EED6A70054583A /* ArouseRadio */ = {
+			isa = PBXGroup;
+			children = (
+				7F1F0B7621F3B12300097F00 /* ArouseRadio.entitlements */,
+				7F1F0B7121F3A9CC00097F00 /* View */,
+				7F53770621EED6A70054583A /* AppDelegate.swift */,
+				7F55224E21F15C2000B06628 /* Animation */,
+				7F53773A21EED77C0054583A /* Services */,
+				7F53773921EED7760054583A /* Model */,
+				7F53773721EED74E0054583A /* Radio */,
+				7F53771021EED6A80054583A /* Assets.xcassets */,
+				7F53771221EED6A80054583A /* LaunchScreen.storyboard */,
+				7F53771521EED6A80054583A /* Info.plist */,
+				7F53770D21EED6A70054583A /* ArouseRadio.xcdatamodeld */,
+			);
+			path = ArouseRadio;
+			sourceTree = "<group>";
+		};
+		7F53771D21EED6A80054583A /* ArouseRadioTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F53771E21EED6A80054583A /* ArouseRadioTests.swift */,
+				7F53772021EED6A80054583A /* Info.plist */,
+			);
+			path = ArouseRadioTests;
+			sourceTree = "<group>";
+		};
+		7F53772821EED6A80054583A /* ArouseRadioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F53772921EED6A80054583A /* ArouseRadioUITests.swift */,
+				7F53772B21EED6A80054583A /* Info.plist */,
+			);
+			path = ArouseRadioUITests;
+			sourceTree = "<group>";
+		};
+		7F53773721EED74E0054583A /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				7F53773B21EED8080054583A /* RadioViewModel.swift */,
+				7F53770821EED6A70054583A /* RadioController.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
+		7F53773921EED7760054583A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F53773A21EED77C0054583A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7F53773D21EED8330054583A /* AudioService.swift */,
+				7F1F0B7421F3ACFE00097F00 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7F55224E21F15C2000B06628 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				7F1F0B8B21F3D0CD00097F00 /* play_to_pause.json */,
+				7F1F0B8D21F3D0F200097F00 /* pause_to_play.json */,
+				7F1F0B6F21F39D5F00097F00 /* circle_red_button.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		B35B1EA7B9C5304EBE5A080F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB7F8556D263D044B6D60F /* Pods-ArouseRadio.debug.xcconfig */,
+				81FFD40DAEDFE8DAEEFB150A /* Pods-ArouseRadio.release.xcconfig */,
+				72779CACEA358F0465296F7C /* Pods-ArouseRadioTests.debug.xcconfig */,
+				8A8B14920300620D5B0604CD /* Pods-ArouseRadioTests.release.xcconfig */,
+				71B1264E6CD5C3C1B706ACF7 /* Pods-ArouseRadioUITests.debug.xcconfig */,
+				66CA7D1DA587FDFA4F4FDA11 /* Pods-ArouseRadioUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BDA68058E8ADEB1D21A08EF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6327CEEB751CDE8C2EE473D /* Pods_ArouseRadio.framework */,
+				13A13492CA3506E76CE43813 /* Pods_ArouseRadioTests.framework */,
+				FC5A6557E1902CFD4B88B18F /* Pods_ArouseRadioUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F53770221EED6A70054583A /* ArouseRadio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F53772E21EED6A80054583A /* Build configuration list for PBXNativeTarget "ArouseRadio" */;
+			buildPhases = (
+				3E520EBF6E8C5CB3C6471AF3 /* [CP] Check Pods Manifest.lock */,
+				7F5376FF21EED6A70054583A /* Sources */,
+				7F53770021EED6A70054583A /* Frameworks */,
+				7F53770121EED6A70054583A /* Resources */,
+				F2A57C6E7FECC53871FEF216 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArouseRadio;
+			productName = ArouseRadio;
+			productReference = 7F53770321EED6A70054583A /* ArouseRadio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F53771921EED6A80054583A /* ArouseRadioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F53773121EED6A80054583A /* Build configuration list for PBXNativeTarget "ArouseRadioTests" */;
+			buildPhases = (
+				3B51A77B643E738156D2DC07 /* [CP] Check Pods Manifest.lock */,
+				7F53771621EED6A80054583A /* Sources */,
+				7F53771721EED6A80054583A /* Frameworks */,
+				7F53771821EED6A80054583A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F53771C21EED6A80054583A /* PBXTargetDependency */,
+			);
+			name = ArouseRadioTests;
+			productName = ArouseRadioTests;
+			productReference = 7F53771A21EED6A80054583A /* ArouseRadioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F53772421EED6A80054583A /* ArouseRadioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F53773421EED6A80054583A /* Build configuration list for PBXNativeTarget "ArouseRadioUITests" */;
+			buildPhases = (
+				169F4D7BFD3A0E4AB43EA4D8 /* [CP] Check Pods Manifest.lock */,
+				7F53772121EED6A80054583A /* Sources */,
+				7F53772221EED6A80054583A /* Frameworks */,
+				7F53772321EED6A80054583A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F53772721EED6A80054583A /* PBXTargetDependency */,
+			);
+			name = ArouseRadioUITests;
+			productName = ArouseRadioUITests;
+			productReference = 7F53772521EED6A80054583A /* ArouseRadioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F5376FB21EED6A70054583A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Jared Williams";
+				TargetAttributes = {
+					7F53770221EED6A70054583A = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
+					};
+					7F53771921EED6A80054583A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7F53770221EED6A70054583A;
+					};
+					7F53772421EED6A80054583A = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 7F53770221EED6A70054583A;
+					};
+				};
+			};
+			buildConfigurationList = 7F5376FE21EED6A70054583A /* Build configuration list for PBXProject "ArouseRadio" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F5376FA21EED6A70054583A;
+			productRefGroup = 7F53770421EED6A70054583A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F53770221EED6A70054583A /* ArouseRadio */,
+				7F53771921EED6A80054583A /* ArouseRadioTests */,
+				7F53772421EED6A80054583A /* ArouseRadioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F53770121EED6A70054583A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F1F0B7021F39D5F00097F00 /* circle_red_button.json in Resources */,
+				7F53771421EED6A80054583A /* LaunchScreen.storyboard in Resources */,
+				7F53771121EED6A80054583A /* Assets.xcassets in Resources */,
+				7F1F0B8C21F3D0CD00097F00 /* play_to_pause.json in Resources */,
+				7F1F0B8E21F3D0F200097F00 /* pause_to_play.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F53771821EED6A80054583A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F53772321EED6A80054583A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		169F4D7BFD3A0E4AB43EA4D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArouseRadioUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B51A77B643E738156D2DC07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArouseRadioTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E520EBF6E8C5CB3C6471AF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArouseRadio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2A57C6E7FECC53871FEF216 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F5376FF21EED6A70054583A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F53773E21EED8330054583A /* AudioService.swift in Sources */,
+				7F53770921EED6A70054583A /* RadioController.swift in Sources */,
+				7F1F0B7321F3A9E800097F00 /* LiveLabel.swift in Sources */,
+				7F53770F21EED6A70054583A /* ArouseRadio.xcdatamodeld in Sources */,
+				7F53773C21EED8080054583A /* RadioViewModel.swift in Sources */,
+				7F53770721EED6A70054583A /* AppDelegate.swift in Sources */,
+				7F1F0B7521F3ACFE00097F00 /* NetworkService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F53771621EED6A80054583A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F53771F21EED6A80054583A /* ArouseRadioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F53772121EED6A80054583A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F53772A21EED6A80054583A /* ArouseRadioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F53771C21EED6A80054583A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F53770221EED6A70054583A /* ArouseRadio */;
+			targetProxy = 7F53771B21EED6A80054583A /* PBXContainerItemProxy */;
+		};
+		7F53772721EED6A80054583A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F53770221EED6A70054583A /* ArouseRadio */;
+			targetProxy = 7F53772621EED6A80054583A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F53771221EED6A80054583A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F53771321EED6A80054583A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F53772C21EED6A80054583A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F53772D21EED6A80054583A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F53772F21EED6A80054583A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CEB7F8556D263D044B6D60F /* Pods-ArouseRadio.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				INFOPLIST_FILE = ArouseRadio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F53773021EED6A80054583A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81FFD40DAEDFE8DAEEFB150A /* Pods-ArouseRadio.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				INFOPLIST_FILE = ArouseRadio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7F53773221EED6A80054583A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72779CACEA358F0465296F7C /* Pods-ArouseRadioTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				INFOPLIST_FILE = ArouseRadioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArouseRadio.app/ArouseRadio";
+			};
+			name = Debug;
+		};
+		7F53773321EED6A80054583A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8B14920300620D5B0604CD /* Pods-ArouseRadioTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				INFOPLIST_FILE = ArouseRadioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArouseRadio.app/ArouseRadio";
+			};
+			name = Release;
+		};
+		7F53773521EED6A80054583A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B1264E6CD5C3C1B706ACF7 /* Pods-ArouseRadioUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				INFOPLIST_FILE = ArouseRadioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ArouseRadio;
+			};
+			name = Debug;
+		};
+		7F53773621EED6A80054583A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66CA7D1DA587FDFA4F4FDA11 /* Pods-ArouseRadioUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				INFOPLIST_FILE = ArouseRadioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ArouseRadio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F5376FE21EED6A70054583A /* Build configuration list for PBXProject "ArouseRadio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F53772C21EED6A80054583A /* Debug */,
+				7F53772D21EED6A80054583A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F53772E21EED6A80054583A /* Build configuration list for PBXNativeTarget "ArouseRadio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F53772F21EED6A80054583A /* Debug */,
+				7F53773021EED6A80054583A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F53773121EED6A80054583A /* Build configuration list for PBXNativeTarget "ArouseRadioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F53773221EED6A80054583A /* Debug */,
+				7F53773321EED6A80054583A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F53773421EED6A80054583A /* Build configuration list for PBXNativeTarget "ArouseRadioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F53773521EED6A80054583A /* Debug */,
+				7F53773621EED6A80054583A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7F53770D21EED6A70054583A /* ArouseRadio.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7F53770E21EED6A70054583A /* ArouseRadio.xcdatamodel */,
+			);
+			currentVersion = 7F53770E21EED6A70054583A /* ArouseRadio.xcdatamodel */;
+			path = ArouseRadio.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7F5376FB21EED6A70054583A /* Project object */;
+}
