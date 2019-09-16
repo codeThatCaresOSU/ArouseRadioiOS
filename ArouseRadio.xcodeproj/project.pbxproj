@@ -18,6 +18,7 @@
 		7F53772A21EED6A80054583A /* ArouseRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53772921EED6A80054583A /* ArouseRadioUITests.swift */; };
 		7F53773C21EED8080054583A /* RadioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53773B21EED8080054583A /* RadioViewModel.swift */; };
 		7F53773E21EED8330054583A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53773D21EED8330054583A /* AudioService.swift */; };
+		7FB8762D2330414A00F1D6FF /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8762C2330414A00F1D6FF /* Global.swift */; };
 		972CB8BEF4555083E38FA9E5 /* Pods_ArouseRadioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A13492CA3506E76CE43813 /* Pods_ArouseRadioTests.framework */; };
 		9DF3CBAD10E837195EC4CC16 /* Pods_ArouseRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6327CEEB751CDE8C2EE473D /* Pods_ArouseRadio.framework */; };
 		E62596FBF8198194966EF844 /* Pods_ArouseRadioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5A6557E1902CFD4B88B18F /* Pods_ArouseRadioUITests.framework */; };
@@ -63,6 +64,7 @@
 		7F53772B21EED6A80054583A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F53773B21EED8080054583A /* RadioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModel.swift; sourceTree = "<group>"; };
 		7F53773D21EED8330054583A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		7FB8762C2330414A00F1D6FF /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		81FFD40DAEDFE8DAEEFB150A /* Pods-ArouseRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio.release.xcconfig"; sourceTree = "<group>"; };
 		8A8B14920300620D5B0604CD /* Pods-ArouseRadioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioTests/Pods-ArouseRadioTests.release.xcconfig"; sourceTree = "<group>"; };
 		8CEB7F8556D263D044B6D60F /* Pods-ArouseRadio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				7F53771221EED6A80054583A /* LaunchScreen.storyboard */,
 				7F53771521EED6A80054583A /* Info.plist */,
 				7F53770D21EED6A70054583A /* ArouseRadio.xcdatamodeld */,
+				7FB8762C2330414A00F1D6FF /* Global.swift */,
 			);
 			path = ArouseRadio;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB8762D2330414A00F1D6FF /* Global.swift in Sources */,
 				7F53773E21EED8330054583A /* AudioService.swift in Sources */,
 				7F53770921EED6A70054583A /* RadioController.swift in Sources */,
 				7F1F0B7321F3A9E800097F00 /* LiveLabel.swift in Sources */,
