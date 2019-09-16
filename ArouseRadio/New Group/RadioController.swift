@@ -10,6 +10,8 @@ import UIKit
 
 class RadioController: UIViewController {
     
+    private var timer = Timer()
+    
     private lazy var viewModel: RadioViewModel = RadioViewModel(delegate: self)
     
     private lazy var albumArt: UIImageView = {
@@ -21,6 +23,16 @@ class RadioController: UIViewController {
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 5
         return imageView
+    }()
+    
+    private lazy var playPauseButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Play/pause", for: .normal)
+        button.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.15, alpha:0.4)
+        button.clipsToBounds = true
+        button.addTarget(self, action: #selector(playButtonPressed), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     private lazy var darkView: UIView = {
@@ -48,25 +60,23 @@ class RadioController: UIViewController {
         super.viewDidLoad()
         self.addSubViews()
         self.setupConstraints()
-        self.setupColorTimer()
         self.view.backgroundColor = .black
-        playButtonPressed()
     }
     
     private func addSubViews() {
         self.view.addSubview(self.darkView)
         self.view.addSubview(self.albumArt)
         self.view.addSubview(self.liveLabel)
+        self.view.addSubview(self.playPauseButton)
     }
     
     private func setupColorTimer() {
-        let timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [ weak self ] _ in
+        timer.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [ weak self ] _ in
             if let controller = self {
                 self?.changeBackgroundToRandomColor(controller: controller)
             }
         }
-        
-        timer.fire()
     }
     
     private func setupConstraints() {
@@ -77,8 +87,15 @@ class RadioController: UIViewController {
         self.albumArt.widthAnchor.constraint(equalToConstant: size).isActive = true
         self.albumArt.heightAnchor.constraint(equalToConstant: size).isActive = true
         
+        self.playPauseButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.playPauseButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        self.playPauseButton.widthAnchor.constraint(equalToConstant: size).isActive = true
+        self.playPauseButton.heightAnchor.constraint(equalToConstant: size).isActive = true
+        
         // Make the album art a circle
         self.albumArt.layer.cornerRadius = size / 2
+        self.playPauseButton.layer.cornerRadius = size / 2
+        
         
         self.liveLabel.centerXAnchor.constraint(equalTo: self.albumArt.centerXAnchor, constant: 0).isActive = true
         self.liveLabel.topAnchor.constraint(equalTo: self.albumArt.bottomAnchor, constant: 8).isActive = true
@@ -96,17 +113,18 @@ class RadioController: UIViewController {
     }
     
     @objc private func playButtonPressed() { //Factor all of this into the ViewModel if possible
-        rotate()
         if !self.viewModel.isPlaying {
+            playPauseButton.backgroundColor = .clear
+            rotate()
+            setupColorTimer()
             self.viewModel.playButtonPressed()
         } else {
+            playPauseButton.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.15, alpha:0.4)
+            stopRotating()
+            timer.invalidate()
+            self.viewModel.stopButtonPressed()
             self.viewModel.stopButtonPressed()
         }        
-    }
-    
-    @objc func stopButtonPressed() {
-        stopRotating()
-        self.viewModel.stopButtonPressed()
     }
     
     private func changeBackgroundToRandomColor(controller: RadioController) {
