@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Lottie
 
 class RadioController: UIViewController {
     
@@ -22,13 +21,15 @@ class RadioController: UIViewController {
         return imageView
     }()
     
-    private lazy var playPauseAnimationView: LOTAnimationView = {
-        let view = LOTAnimationView(name: self.viewModel.playPauseJsonString)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.playButtonPressed)))
-        view.tintColor = .white
+    private lazy var darkView: UIView = {
+        let view = UIView()
+        
+        view.frame = self.view.frame
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        
         return view
     }()
+
     
     private lazy var liveLabel: LiveLabel = {
        let label = LiveLabel(frame: CGRect.zero)
@@ -45,13 +46,24 @@ class RadioController: UIViewController {
         super.viewDidLoad()
         self.addSubViews()
         self.setupConstraints()
+        self.setupColorTimer()
         self.view.backgroundColor = .black
     }
     
     private func addSubViews() {
         self.view.addSubview(self.albumArt)
-        self.view.addSubview(self.playPauseAnimationView)
         self.view.addSubview(self.liveLabel)
+        self.view.addSubview(self.darkView)
+    }
+    
+    private func setupColorTimer() {
+        let timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [ weak self ] _ in
+            if let controller = self {
+                self?.changeBackgroundToRandomColor(controller: controller)
+            }
+        }
+        
+        timer.fire()
     }
     
     private func setupConstraints() {
@@ -61,12 +73,6 @@ class RadioController: UIViewController {
         self.albumArt.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         self.albumArt.widthAnchor.constraint(equalToConstant: size).isActive = true
         self.albumArt.heightAnchor.constraint(equalToConstant: size).isActive = true
-        
-        self.playPauseAnimationView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.playPauseAnimationView.topAnchor.constraint(equalTo: self.liveLabel.bottomAnchor, constant: 16).isActive = true
-        self.playPauseAnimationView.widthAnchor.constraint(equalToConstant: 75).isActive = true
-        self.playPauseAnimationView.heightAnchor.constraint(equalToConstant: 75).isActive = true
-        
         
         self.liveLabel.centerXAnchor.constraint(equalTo: self.albumArt.centerXAnchor, constant: 0).isActive = true
         self.liveLabel.topAnchor.constraint(equalTo: self.albumArt.bottomAnchor, constant: 8).isActive = true
@@ -78,34 +84,26 @@ class RadioController: UIViewController {
     
     public func updateUI() {
         self.liveLabel.text = self.viewModel.liveLabel
-        self.playPauseAnimationView.animation = self.viewModel.playPauseJsonString
     }
     
     private func controlAnimations() {
-        self.playPauseAnimationView.animationProgress = 1.0
     }
     
     @objc private func playButtonPressed() { //Factor all of this into the ViewModel if possible
         if !self.viewModel.isPlaying {
-            self.playPauseAnimationView.isUserInteractionEnabled = false
             self.viewModel.playButtonPressed()
-            
-            self.playPauseAnimationView.play(toProgress: 0.99) { [weak self] (true) in
-                self?.playPauseAnimationView.isUserInteractionEnabled = true
-            }
         } else {
-            self.playPauseAnimationView.isUserInteractionEnabled = false
             self.viewModel.stopButtonPressed()
-            
-            
-            self.playPauseAnimationView.play(toProgress: 0.99) { [weak self] (true) in
-                self?.playPauseAnimationView.isUserInteractionEnabled = true
-            }
         }        
     }
     
     @objc func stopButtonPressed() {
         self.viewModel.stopButtonPressed()
     }
+    
+    private func changeBackgroundToRandomColor(controller: RadioController) {
+        UIView.animate(withDuration: 1.25, delay: 0.0, options: .allowUserInteraction, animations: {
+            controller.view.backgroundColor = UIColor.random()
+        }, completion: nil)
+    }
 }
-

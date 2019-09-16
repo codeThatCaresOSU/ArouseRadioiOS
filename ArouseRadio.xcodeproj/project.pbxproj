@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F1F0B7021F39D5F00097F00 /* circle_red_button.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F1F0B6F21F39D5F00097F00 /* circle_red_button.json */; };
 		7F1F0B7321F3A9E800097F00 /* LiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F0B7221F3A9E800097F00 /* LiveLabel.swift */; };
 		7F1F0B7521F3ACFE00097F00 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F0B7421F3ACFE00097F00 /* NetworkService.swift */; };
-		7F1F0B8C21F3D0CD00097F00 /* play_to_pause.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F1F0B8B21F3D0CD00097F00 /* play_to_pause.json */; };
-		7F1F0B8E21F3D0F200097F00 /* pause_to_play.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F1F0B8D21F3D0F200097F00 /* pause_to_play.json */; };
 		7F53770721EED6A70054583A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53770621EED6A70054583A /* AppDelegate.swift */; };
 		7F53770921EED6A70054583A /* RadioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53770821EED6A70054583A /* RadioController.swift */; };
 		7F53770F21EED6A70054583A /* ArouseRadio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F53770D21EED6A70054583A /* ArouseRadio.xcdatamodeld */; };
@@ -21,6 +18,7 @@
 		7F53772A21EED6A80054583A /* ArouseRadioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53772921EED6A80054583A /* ArouseRadioUITests.swift */; };
 		7F53773C21EED8080054583A /* RadioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53773B21EED8080054583A /* RadioViewModel.swift */; };
 		7F53773E21EED8330054583A /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F53773D21EED8330054583A /* AudioService.swift */; };
+		7FB8762D2330414A00F1D6FF /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB8762C2330414A00F1D6FF /* Global.swift */; };
 		972CB8BEF4555083E38FA9E5 /* Pods_ArouseRadioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13A13492CA3506E76CE43813 /* Pods_ArouseRadioTests.framework */; };
 		9DF3CBAD10E837195EC4CC16 /* Pods_ArouseRadio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6327CEEB751CDE8C2EE473D /* Pods_ArouseRadio.framework */; };
 		E62596FBF8198194966EF844 /* Pods_ArouseRadioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5A6557E1902CFD4B88B18F /* Pods_ArouseRadioUITests.framework */; };
@@ -48,12 +46,9 @@
 		66CA7D1DA587FDFA4F4FDA11 /* Pods-ArouseRadioUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioUITests/Pods-ArouseRadioUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71B1264E6CD5C3C1B706ACF7 /* Pods-ArouseRadioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioUITests/Pods-ArouseRadioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		72779CACEA358F0465296F7C /* Pods-ArouseRadioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioTests/Pods-ArouseRadioTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7F1F0B6F21F39D5F00097F00 /* circle_red_button.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle_red_button.json; sourceTree = "<group>"; };
 		7F1F0B7221F3A9E800097F00 /* LiveLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveLabel.swift; sourceTree = "<group>"; };
 		7F1F0B7421F3ACFE00097F00 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7F1F0B7621F3B12300097F00 /* ArouseRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArouseRadio.entitlements; sourceTree = "<group>"; };
-		7F1F0B8B21F3D0CD00097F00 /* play_to_pause.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = play_to_pause.json; path = ../../../../../../../../Downloads/play_to_pause.json; sourceTree = "<group>"; };
-		7F1F0B8D21F3D0F200097F00 /* pause_to_play.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pause_to_play.json; path = ../../../../../../../../Downloads/pause_to_play.json; sourceTree = "<group>"; };
 		7F53770321EED6A70054583A /* ArouseRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArouseRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F53770621EED6A70054583A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F53770821EED6A70054583A /* RadioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RadioController.swift; path = "../New Group/RadioController.swift"; sourceTree = "<group>"; };
@@ -69,6 +64,7 @@
 		7F53772B21EED6A80054583A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F53773B21EED8080054583A /* RadioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewModel.swift; sourceTree = "<group>"; };
 		7F53773D21EED8330054583A /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		7FB8762C2330414A00F1D6FF /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		81FFD40DAEDFE8DAEEFB150A /* Pods-ArouseRadio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadio.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio.release.xcconfig"; sourceTree = "<group>"; };
 		8A8B14920300620D5B0604CD /* Pods-ArouseRadioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadioTests/Pods-ArouseRadioTests.release.xcconfig"; sourceTree = "<group>"; };
 		8CEB7F8556D263D044B6D60F /* Pods-ArouseRadio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArouseRadio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 				7F1F0B7621F3B12300097F00 /* ArouseRadio.entitlements */,
 				7F1F0B7121F3A9CC00097F00 /* View */,
 				7F53770621EED6A70054583A /* AppDelegate.swift */,
-				7F55224E21F15C2000B06628 /* Animation */,
 				7F53773A21EED77C0054583A /* Services */,
 				7F53773921EED7760054583A /* Model */,
 				7F53773721EED74E0054583A /* Radio */,
@@ -148,6 +143,7 @@
 				7F53771221EED6A80054583A /* LaunchScreen.storyboard */,
 				7F53771521EED6A80054583A /* Info.plist */,
 				7F53770D21EED6A70054583A /* ArouseRadio.xcdatamodeld */,
+				7FB8762C2330414A00F1D6FF /* Global.swift */,
 			);
 			path = ArouseRadio;
 			sourceTree = "<group>";
@@ -195,16 +191,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		7F55224E21F15C2000B06628 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				7F1F0B8B21F3D0CD00097F00 /* play_to_pause.json */,
-				7F1F0B8D21F3D0F200097F00 /* pause_to_play.json */,
-				7F1F0B6F21F39D5F00097F00 /* circle_red_button.json */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
 		B35B1EA7B9C5304EBE5A080F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +225,6 @@
 				7F5376FF21EED6A70054583A /* Sources */,
 				7F53770021EED6A70054583A /* Frameworks */,
 				7F53770121EED6A70054583A /* Resources */,
-				F2A57C6E7FECC53871FEF216 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,11 +329,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F1F0B7021F39D5F00097F00 /* circle_red_button.json in Resources */,
 				7F53771421EED6A80054583A /* LaunchScreen.storyboard in Resources */,
 				7F53771121EED6A80054583A /* Assets.xcassets in Resources */,
-				7F1F0B8C21F3D0CD00097F00 /* play_to_pause.json in Resources */,
-				7F1F0B8E21F3D0F200097F00 /* pause_to_play.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,24 +405,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2A57C6E7FECC53871FEF216 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArouseRadio/Pods-ArouseRadio-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -448,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB8762D2330414A00F1D6FF /* Global.swift in Sources */,
 				7F53773E21EED8330054583A /* AudioService.swift in Sources */,
 				7F53770921EED6A70054583A /* RadioController.swift in Sources */,
 				7F1F0B7321F3A9E800097F00 /* LiveLabel.swift in Sources */,

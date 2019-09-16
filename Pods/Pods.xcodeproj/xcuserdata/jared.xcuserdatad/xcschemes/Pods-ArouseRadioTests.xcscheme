@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40B48BC766BB196B3BC0D4666E481C4A"
+               BlueprintIdentifier = "95CC5D1AF85246ACC70FD0A7ED3E2829"
                BuildableName = "Pods_ArouseRadioTests.framework"
                BlueprintName = "Pods-ArouseRadioTests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "40B48BC766BB196B3BC0D4666E481C4A"
+            BlueprintIdentifier = "95CC5D1AF85246ACC70FD0A7ED3E2829"
             BuildableName = "Pods_ArouseRadioTests.framework"
             BlueprintName = "Pods-ArouseRadioTests"
             ReferencedContainer = "container:Pods.xcodeproj">
