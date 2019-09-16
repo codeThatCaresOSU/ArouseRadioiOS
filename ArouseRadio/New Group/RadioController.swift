@@ -51,9 +51,9 @@ class RadioController: UIViewController {
     }
     
     private func addSubViews() {
+        self.view.addSubview(self.darkView)
         self.view.addSubview(self.albumArt)
         self.view.addSubview(self.liveLabel)
-        self.view.addSubview(self.darkView)
     }
     
     private func setupColorTimer() {
