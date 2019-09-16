@@ -13,11 +13,13 @@ class RadioController: UIViewController {
     private lazy var viewModel: RadioViewModel = RadioViewModel(delegate: self)
     
     private lazy var albumArt: UIImageView = {
-       let imageView = UIImageView(image: UIImage(named: "arouseLogo"))
+        let imageView = UIImageView(image: UIImage(named: "beatles"))
         imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 25
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 5
         return imageView
     }()
     
@@ -48,6 +50,7 @@ class RadioController: UIViewController {
         self.setupConstraints()
         self.setupColorTimer()
         self.view.backgroundColor = .black
+        playButtonPressed()
     }
     
     private func addSubViews() {
@@ -74,6 +77,9 @@ class RadioController: UIViewController {
         self.albumArt.widthAnchor.constraint(equalToConstant: size).isActive = true
         self.albumArt.heightAnchor.constraint(equalToConstant: size).isActive = true
         
+        // Make the album art a circle
+        self.albumArt.layer.cornerRadius = size / 2
+        
         self.liveLabel.centerXAnchor.constraint(equalTo: self.albumArt.centerXAnchor, constant: 0).isActive = true
         self.liveLabel.topAnchor.constraint(equalTo: self.albumArt.bottomAnchor, constant: 8).isActive = true
         self.liveLabel.widthAnchor.constraint(equalTo: self.albumArt.widthAnchor).isActive = true
@@ -90,6 +96,7 @@ class RadioController: UIViewController {
     }
     
     @objc private func playButtonPressed() { //Factor all of this into the ViewModel if possible
+        rotate()
         if !self.viewModel.isPlaying {
             self.viewModel.playButtonPressed()
         } else {
@@ -98,6 +105,7 @@ class RadioController: UIViewController {
     }
     
     @objc func stopButtonPressed() {
+        stopRotating()
         self.viewModel.stopButtonPressed()
     }
     
@@ -105,5 +113,26 @@ class RadioController: UIViewController {
         UIView.animate(withDuration: 1.25, delay: 0.0, options: .allowUserInteraction, animations: {
             controller.view.backgroundColor = UIColor.random()
         }, completion: nil)
+    }
+    
+    func rotate() {
+        let kAnimationKey = "rotation"
+        
+        if albumArt.layer.animation(forKey: kAnimationKey) == nil {
+            let animate = CABasicAnimation(keyPath: "transform.rotation")
+            animate.duration = 5
+            animate.repeatCount = Float.infinity
+            animate.fromValue = 0.0
+            animate.toValue = Float(.pi * 2.0)
+            albumArt.layer.add(animate, forKey: kAnimationKey)
+        }
+    }
+    
+    func stopRotating() {
+        let kAnimationKey = "rotation"
+        
+        if albumArt.layer.animation(forKey: kAnimationKey) != nil {
+            albumArt.layer.removeAnimation(forKey: kAnimationKey)
+        }
     }
 }
