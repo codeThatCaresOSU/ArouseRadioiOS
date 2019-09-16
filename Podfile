@@ -6,7 +6,6 @@ target 'ArouseRadio' do
   use_frameworks!
 
   # Pods for ArouseRadio
-  pod 'lottie-ios'
 
   target 'ArouseRadioTests' do
     inherit! :search_paths
