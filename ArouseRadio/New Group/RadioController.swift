@@ -194,7 +194,6 @@ class RadioController: UIViewController {
             stopRotating()
             timer.invalidate()
             self.viewModel.stopButtonPressed()
-            self.viewModel.stopButtonPressed()
         }        
     }
     
