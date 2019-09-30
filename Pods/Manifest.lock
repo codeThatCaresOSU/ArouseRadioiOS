@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: f0280311d6307f59c5b5d4895a6ff186aefb343b
+PODS:
+  - RxSwift (4.5.0)
+  - UIImageColors (2.1.0)
+
+DEPENDENCIES:
+  - RxSwift
+  - UIImageColors
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxSwift
+    - UIImageColors
+
+SPEC CHECKSUMS:
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
+
+PODFILE CHECKSUM: 52b19b07c87064f9fcc2a14cd3eda826d1b208a2
 
 COCOAPODS: 1.7.5
