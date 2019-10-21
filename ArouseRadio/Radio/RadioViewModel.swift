@@ -36,6 +36,10 @@ class RadioViewModel {
         return self.music?.tracks?[0].artist?.text
     }
     
+    public var nowPlayingAlbum: String? {
+        return self.music?.tracks?[0].album?.text
+    }
+    
     private var radioState: RadioState = RadioState(albumUrl: nil, liveNowLabel: "Press To Go Live", musicLabel: "", songLabel: "", albumLabel: "", currentlyPlaying: false, shouldChangePlayButtonState: false)
     
     init(audioService: AudioService, onNowPlayingUpdate: PublishSubject<Music>) {
