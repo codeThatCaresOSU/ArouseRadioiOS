@@ -8,18 +8,41 @@
 
 import UIKit
 import CoreData
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private var apiUrl = URL(string:"https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=arouseosu&api_key=2e7355577ebe34457b2bc801bd9f23ff&format=json")
+     private var subsciption: Disposable?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = RadioController()
+                
+        let audioService = AudioService()
+        let onNowPlayingUpdate = PublishSubject<Music>()
+        
+        let radioViewModel = RadioViewModel(audioService: audioService, onNowPlayingUpdate: onNowPlayingUpdate)
+        let radioController = RadioController(viewModel: radioViewModel)
+        
+        
+        window?.rootViewController = radioController
         window?.makeKeyAndVisible()
+        
+        self.subsciption = NetworkService.getEvery(seconds: 20, url: self.apiUrl).subscribe() { (event: Event<Data>?) in
+            
+            if let unwrappedEvent = event, let unwrappedElement = unwrappedEvent.element, let data = unwrappedElement as? Data {
+                DispatchQueue.main.async {
+                    let json = JSONService.serialize(data: data)
+                    if let unwrappedJson = json {
+                        let music = Music(json: unwrappedJson)
+                        onNowPlayingUpdate.onNext(music)
+                    }
+                }
+            }
+        }
         return true
     }
 

@@ -5,16 +5,7 @@ target 'ArouseRadio' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for ArouseRadio
-
-  target 'ArouseRadioTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ArouseRadioUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+	pod 'UIImageColors'
+	pod 'RxSwift'
 
 end

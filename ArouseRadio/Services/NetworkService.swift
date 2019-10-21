@@ -7,28 +7,56 @@
 //
 
 import Foundation
+import RxSwift
+import UIKit
 
 
 class NetworkService {
     
-    init() {}
-    
-    func siteIsUp(url: URL, completion: @escaping (SiteState)->()) {
-        // Figure out how to do this
-        completion(.Up)
+    public static func getEvery(seconds timeInterval: TimeInterval, url: URL?) -> PublishSubject<Data> {
+        let observer = PublishSubject<Data>()
+        let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { _ in
+            print("Timer fired")
+            if let unwrappedUrl = url {
+                _ = NetworkService.get(url: unwrappedUrl).subscribe() { (event: Event<Data?>?) in
+                    if let unwrappedEvent = event, let unwrappedElement = unwrappedEvent.element, let unwrappedData = unwrappedElement {
+                        observer.onNext(unwrappedData)
+                    }
+                }
+            }
+        }
+        
+        timer.fire()
+        
+        return observer
     }
     
-    func notifySiteState(url: URL, completion: @escaping (SiteState) -> ()) {
-        Timer.scheduledTimer(withTimeInterval: TimeInterval(floatLiteral: 10.0), repeats: true) { (timer) in
-            print("HI")
-            self.siteIsUp(url: url) { (siteState) in
-                completion(siteState)
+    public static func getImage(url: URL?) -> PublishSubject<UIImage> {
+        let observer = PublishSubject<UIImage>()
+        
+        if let unwrappedUrl = url {
+             NetworkService.get(url: unwrappedUrl).subscribe() { (event: Event<Data?>?) in
+                if let unwrappedEvent = event, let unwrappedElement = unwrappedEvent.element, let unwrappedData = unwrappedElement {
+                    if let image = UIImage(data: unwrappedData) {
+                        observer.onNext(image)
+                    }
+                }
             }
-        }.fire()
+        }
+        
+        return observer
+    }
+    
+    private static func get(url: URL) -> PublishSubject<Data?> {
+        let dataObserver = PublishSubject<Data?>()
+        
+        URLSession.shared.dataTask(with: url) { (data: Data?, response, error) in
+            if error == nil, data != nil {
+                dataObserver.onNext(data)
+            }
+        }.resume()
+        
+        return dataObserver
     }
 }
 
-public enum SiteState {
-    case Up
-    case Down
-}
