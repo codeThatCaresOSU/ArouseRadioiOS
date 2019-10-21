@@ -14,6 +14,8 @@ class RadioController: UIViewController {
     
     private var timer = Timer()
     private var viewModel: RadioViewModel!
+    private let playImage = UIImage(named: "play")!.withRenderingMode(.alwaysTemplate)
+    private let pauseImage = UIImage(named: "pause")!.withRenderingMode(.alwaysTemplate)
     
     init(viewModel: RadioViewModel) {
         super.init(nibName: nil, bundle: nil)
@@ -51,8 +53,7 @@ class RadioController: UIViewController {
     
     private lazy var playPauseButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Play/pause", for: .normal)
-        button.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.15, alpha:0.4)
+        button.setImage(playImage, for: .normal)
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(playButtonPressed), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -133,6 +134,23 @@ class RadioController: UIViewController {
         self.view.backgroundColor = .black
     }
     
+    override func viewDidLayoutSubviews() {
+        // Set up mask around button
+        let mask = CAShapeLayer()
+        mask.frame = view.bounds
+        let radius: CGFloat = 30.0
+        print(albumArt.frame)
+        let midX = albumArt.bounds.midX
+        let midY = albumArt.bounds.midY
+        let rect = CGRect(x: midX - radius, y: midY - radius, width: 2 * radius, height: 2 * radius)
+        let circlePath = UIBezierPath(ovalIn: rect)
+        let path = UIBezierPath(rect: view.bounds)
+        path.append(circlePath)
+        mask.fillRule = CAShapeLayerFillRule.evenOdd
+        mask.path = path.cgPath
+        albumArt.layer.mask = mask
+    }
+    
     private func addSubViews() {
         self.view.addSubview(self.darkView)
         self.view.addSubview(self.albumArt)
@@ -201,15 +219,25 @@ class RadioController: UIViewController {
         self.albumLabel.text = self.viewModel.nowPlayingAlbum ?? ""
         
         if let newAlbumArt = self.viewModel.nowPlayingAlbumArt {
+            /*
+             Uncomment the next lines to use the default album artwork for testing
+            */
+//        if var newAlbumArt = self.viewModel.nowPlayingAlbumArt {
+//            self.songLabel.text = "Song"
+//            self.artistLabel.text = "Artist"
+//            self.albumLabel.text = "Album"
+//            newAlbumArt = albumArt.image!
+            
             self.albumArt.image = newAlbumArt
             if newAlbumArt.size.width > 0.0 {
                 newAlbumArt.getColors() { [weak self] colors in
                     if let self = self {
                         self.view.backgroundColor = colors?.background
                         self.songLabel.textColor = colors?.primary
+                        self.playPauseButton.tintColor = colors?.primary
                         self.artistLabel.textColor = colors?.detail
                         self.albumLabel.textColor = colors?.detail
-                        
+
                         self.arouseButton.layer.cornerRadius = 25
                         self.arouseButton.layoutSubviews()
                     }
@@ -222,16 +250,16 @@ class RadioController: UIViewController {
     }
     
     @objc private func playButtonPressed() { //Factor all of this into the ViewModel if possible
+        self.viewModel.playButtonPressed()
+        
         if !self.viewModel.isPlaying {
-            playPauseButton.backgroundColor = .clear
             rotate()
+            playPauseButton.setImage(pauseImage, for: .normal)
             setupColorTimer()
-            self.viewModel.playButtonPressed()
         } else {
-            playPauseButton.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.15, alpha:0.4)
             stopRotating()
+            playPauseButton.setImage(playImage, for: .normal)
             timer.invalidate()
-            self.viewModel.playButtonPressed()
         }        
     }
     

@@ -564,13 +564,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				DEVELOPMENT_TEAM = E6X7XRG34G;
 				INFOPLIST_FILE = ArouseRadio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DaveBeckerDevelopment.arouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -583,13 +583,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8SR3MG6VY6;
+				DEVELOPMENT_TEAM = E6X7XRG34G;
 				INFOPLIST_FILE = ArouseRadio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JaredWilliams.ArouseRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DaveBeckerDevelopment.arouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
