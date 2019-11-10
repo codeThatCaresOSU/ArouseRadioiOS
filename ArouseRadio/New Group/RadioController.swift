@@ -251,16 +251,7 @@ class RadioController: UIViewController {
             if newAlbumArt.size.width > 0.0 {
                 newAlbumArt.getColors() { [weak self] colors in
                     if let self = self {
-<<<<<<< Updated upstream
-                        self.view.backgroundColor = colors?.background
-                        self.songLabel.textColor = colors?.primary
-                        self.playPauseButton.tintColor = colors?.primary
-                        self.artistLabel.textColor = colors?.detail
-                        self.albumLabel.textColor = colors?.detail
 
-                        self.arouseButton.layer.cornerRadius = 25
-                        self.arouseButton.layoutSubviews()
-=======
                         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: {
                             self.view.backgroundColor = colors?.background
                             self.songLabel.textColor = colors?.primary
@@ -271,7 +262,6 @@ class RadioController: UIViewController {
                             self.arouseButton.layoutSubviews()
                         }, completion: nil)
                         
->>>>>>> Stashed changes
                     }
                 }
             }
