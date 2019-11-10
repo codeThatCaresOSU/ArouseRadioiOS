@@ -41,7 +41,6 @@ class RadioController: UIViewController {
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 5
         
-        
         image?.getColors() { colors in
             self.view.backgroundColor = colors?.background
             self.liveLabel.textColor = colors?.primary
@@ -49,6 +48,19 @@ class RadioController: UIViewController {
         }
         
         return imageView
+    }()
+    
+    private lazy var albumArtContainer: UIView = {
+       let containerView = UIView()
+        
+        containerView.layer.shadowColor = UIColor.red.cgColor
+        containerView.layer.shadowRadius = 35
+        containerView.layer.shadowOpacity = 0.8
+        containerView.layer.shadowOffset = .zero
+        
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return containerView
     }()
     
     private lazy var playPauseButton: UIButton = {
@@ -159,6 +171,7 @@ class RadioController: UIViewController {
         self.view.addSubview(self.artistLabel)
         self.view.addSubview(self.albumLabel)
         self.view.addSubview(self.arouseButton)
+        self.view.addSubview(self.albumArtContainer)
     }
     
     private func setupColorTimer() {
@@ -173,10 +186,18 @@ class RadioController: UIViewController {
     private func setupConstraints() {
         let size = self.view.frame.width * 0.75
         
-        self.albumArt.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.albumArt.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 64).isActive = true
-        self.albumArt.widthAnchor.constraint(equalToConstant: size).isActive = true
-        self.albumArt.heightAnchor.constraint(equalToConstant: size).isActive = true
+        self.albumArtContainer.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.albumArtContainer.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 64).isActive = true
+        self.albumArtContainer.widthAnchor.constraint(equalToConstant: size).isActive = true
+        self.albumArtContainer.heightAnchor.constraint(equalToConstant: size).isActive = true
+        
+        self.albumArtContainer.addSubview(self.albumArt)
+        self.view.bringSubviewToFront(self.playPauseButton)
+        
+        self.albumArt.centerXAnchor.constraint(equalTo: self.albumArtContainer.centerXAnchor).isActive = true
+        self.albumArt.centerYAnchor.constraint(equalTo: self.albumArtContainer.centerYAnchor).isActive = true
+        self.albumArt.widthAnchor.constraint(equalTo: self.albumArtContainer.widthAnchor).isActive = true
+        self.albumArt.heightAnchor.constraint(equalTo: self.albumArtContainer.heightAnchor).isActive = true
         
         self.playPauseButton.centerXAnchor.constraint(equalTo: self.albumArt.centerXAnchor).isActive = true
         self.playPauseButton.centerYAnchor.constraint(equalTo: self.albumArt.centerYAnchor).isActive = true
@@ -212,8 +233,6 @@ class RadioController: UIViewController {
     }
     
     public func updateUI() {
-        //self.liveLabel.text = self.viewModel?.liveLabel
-        //self.albumArt.image = self.viewModel.nowPlayingAlbumArt
         self.songLabel.text = self.viewModel.nowPlayingSong ?? ""
         self.artistLabel.text = self.viewModel.nowPlayingArtist ?? ""
         self.albumLabel.text = self.viewModel.nowPlayingAlbum ?? ""
@@ -232,6 +251,7 @@ class RadioController: UIViewController {
             if newAlbumArt.size.width > 0.0 {
                 newAlbumArt.getColors() { [weak self] colors in
                     if let self = self {
+<<<<<<< Updated upstream
                         self.view.backgroundColor = colors?.background
                         self.songLabel.textColor = colors?.primary
                         self.playPauseButton.tintColor = colors?.primary
@@ -240,6 +260,18 @@ class RadioController: UIViewController {
 
                         self.arouseButton.layer.cornerRadius = 25
                         self.arouseButton.layoutSubviews()
+=======
+                        UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveEaseOut, animations: {
+                            self.view.backgroundColor = colors?.background
+                            self.songLabel.textColor = colors?.primary
+                            self.artistLabel.textColor = colors?.detail
+                            self.albumLabel.textColor = colors?.detail
+                            
+                            self.arouseButton.layer.cornerRadius = 25
+                            self.arouseButton.layoutSubviews()
+                        }, completion: nil)
+                        
+>>>>>>> Stashed changes
                     }
                 }
             }
@@ -270,8 +302,19 @@ class RadioController: UIViewController {
             animation.fromValue = controller.albumArt.layer.borderColor
             animation.toValue = randomColor.cgColor
             animation.duration = 1.75
-
+            controller.albumArt.layer.borderColor = randomColor.cgColor
             controller.albumArt.layer.add(animation, forKey: "borderColor")
+        
+        
+            let shadowAnimation = CABasicAnimation(keyPath: "shadowColor")
+        
+            shadowAnimation.fromValue = controller.albumArtContainer.layer.shadowColor
+            shadowAnimation.toValue = randomColor.cgColor
+            shadowAnimation.duration = 1.75
+        
+            controller.albumArtContainer.layer.shadowColor = randomColor.cgColor
+            controller.albumArtContainer.layer.add(shadowAnimation, forKey: "shadowColor")
+        
     }
     
     func rotate() {
