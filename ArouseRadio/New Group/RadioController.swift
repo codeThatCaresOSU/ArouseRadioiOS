@@ -139,7 +139,6 @@ class RadioController: UIViewController {
         let mask = CAShapeLayer()
         mask.frame = view.bounds
         let radius: CGFloat = 30.0
-        print(albumArt.frame)
         let midX = albumArt.bounds.midX
         let midY = albumArt.bounds.midY
         let rect = CGRect(x: midX - radius, y: midY - radius, width: 2 * radius, height: 2 * radius)
@@ -148,7 +147,9 @@ class RadioController: UIViewController {
         path.append(circlePath)
         mask.fillRule = CAShapeLayerFillRule.evenOdd
         mask.path = path.cgPath
+        let maskBorder = CustomLayer(maskLayer: mask)
         albumArt.layer.mask = mask
+        albumArt.layer.addSublayer(maskBorder)
     }
     
     private func addSubViews() {
@@ -228,7 +229,7 @@ class RadioController: UIViewController {
 //            self.albumLabel.text = "Album"
 //            newAlbumArt = albumArt.image!
             
-            self.albumArt.image = newAlbumArt
+//            self.albumArt.image = newAlbumArt
             if newAlbumArt.size.width > 0.0 {
                 newAlbumArt.getColors() { [weak self] colors in
                     if let self = self {
@@ -264,14 +265,21 @@ class RadioController: UIViewController {
     }
     
     private func changeBackgroundToRandomColor(controller: RadioController) {
-            let animation = CABasicAnimation(keyPath: "borderColor")
-            let randomColor = UIColor.random()
-            
-            animation.fromValue = controller.albumArt.layer.borderColor
-            animation.toValue = randomColor.cgColor
-            animation.duration = 1.75
-
-            controller.albumArt.layer.add(animation, forKey: "borderColor")
+        let animation = CABasicAnimation(keyPath: "borderColor")
+        let randomColor = UIColor.random()
+        
+        animation.fromValue = controller.albumArt.layer.borderColor
+        animation.toValue = randomColor.cgColor
+        animation.duration = 1.75
+        controller.albumArt.layer.add(animation, forKey: "borderColor")
+        controller.albumArt.layer.borderColor = randomColor.cgColor
+        
+        controller.albumArt.layer.sublayers?.forEach { layer in
+            if layer is CustomLayer {
+                (layer as? CustomLayer)?.layoutMySublayers(randomColor: randomColor.cgColor)
+                (layer as? CustomLayer)?.newBorder.strokeColor = randomColor.cgColor
+            }
+        }
     }
     
     func rotate() {
@@ -300,5 +308,52 @@ class RadioController: UIViewController {
         let sfViewController = SFSafariViewController(url: arouseUrl)
         self.present(sfViewController, animated: true)
         
+    }
+}
+class CustomLayer: CALayer {
+
+    private var path: CGPath?
+    private var borderSet: Bool = false
+    var borderCol: CGColor?
+    lazy var newBorder: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.lineWidth = 5
+        layer.path = self.path
+        layer.fillColor = nil
+        return layer
+    }()
+
+    init(maskLayer: CAShapeLayer) {
+        super.init()
+        
+        self.path = maskLayer.path
+        self.frame = maskLayer.frame
+        self.bounds = maskLayer.bounds
+        self.mask = maskLayer
+        self.borderCol = UIColor.green.cgColor
+    }
+
+    func layoutMySublayers(randomColor: CGColor) {
+        self.sublayers = nil
+        self.addSublayer(newBorder)
+        addAnimation(randomColor: randomColor)
+    }
+    
+    func addAnimation(randomColor: CGColor){
+        let animation = CABasicAnimation(keyPath: "strokeColor")
+        animation.fromValue = newBorder.strokeColor
+        animation.toValue = randomColor
+        animation.duration = 1.75
+        animation.repeatCount = 0
+        animation.autoreverses = true
+        newBorder.add(animation, forKey: "strokeColor")
+    }
+
+    required override init(layer: Any) {
+        super.init(layer: layer)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
